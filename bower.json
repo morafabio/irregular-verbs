@@ -1,0 +1,31 @@
+{
+  "name": "irregular-verbs",
+  "version": "0.1",
+  "authors": [
+    "Fabio Mora <mail@fabio.mora.name>"
+  ],
+  "description": "#",
+  "main": "#",
+  "license": "MIT",
+  "homepage": "http://fabiomora.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/vendor"
+  ],
+  "dependencies": {
+    "angular": "1.2.6",
+    "bootstrap": "~3.0.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.6",
+    "angular-loader": "~1.2.6"
+  },
+  "resolutions": {
+    "angular": "1.2.6"
+  }
+}

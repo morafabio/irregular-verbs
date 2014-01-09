@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BaseApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Test your knowledge of irregular verbs." />
+        <meta name="author" content="Fabio Mora @ http://fabiomora.com" />
+
+        <title>Irregular Verbs - test and exercises.</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles -->
+        <link href="css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li><a href="https://github.com/morafabio/">Fork me</a></li>
+                    <li><a href="http://fabiomora.com">Contact</a></li>
+                </ul>
+                <h3 class="text-muted">Irregular Verbs <small>exercises.</small></h3>
+            </div>
+
+            <div class="main" ng-controller="GameCtrl">
+                <section class="playlist">
+                    <h3>Fill the table <small> Good luck!</small></h3>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Verb</th>
+                                <th>Past Tense</th>
+                                <th>Past / Passive Participle</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="verb in verbs | limitTo: limit">
+                                <td>{{ verbs[$index].verb }}</td>
+                                <td>
+                                    <input type="text" ng-model="verbs[$index].answer_past" autofocus />
+                                    <span ng-show="showResults">
+                                        <span ng-show="verbs[$index].past != verbs[$index].answer_past">
+                                            {{ verbs[$index].past }}
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <input type="text" ng-model="verbs[$index].answer_participle" />
+                                    <span ng-show="showResults">
+                                        <span ng-show="verbs[$index].participle != verbs[$index].answer_participle">
+                                            {{ verbs[$index].participle }}
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    {{
+                                        (verbs[$index].past == verbs[$index].answer_past &&
+                                         verbs[$index].participle == verbs[$index].answer_participle) | check
+                                    }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button ng-click="check()" class="">Check</button>
+                    <div class="well well-bg margin-top-10">
+                        {{ statusText }}
+                    </div>
+                    <div class="alert alert-info">
+                        Go faster: don't touch the mouse! Keyboard tips:
+                        <ol>
+                            <li>Reload the page with <code>F5</code> or <code>&#x2318; + R</code> for a new challenge.</li>
+                            <li>Use <code>&#8677; TAB</code> to forward.</li>
+                            <li>Use <code>&#8677; TAB + &#8679; SHIFT</code> to go back.</li>
+                            <li>Press <code>&#9166; ENTER</code> on check button.</li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p><a href="http://fabiomora.com">Fabio Mora</a> &copy; 2014</p>
+                    </div>
+                    <div class="col-md-7 text-right">
+                        Please, use <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a> or
+                        <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Google Chrome</a>.
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /container -->
+
+        <script src="vendor/angular/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/filters.js"></script>
+
+    </body>
+</html>
