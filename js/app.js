@@ -23,7 +23,7 @@ function GameCtrl($scope, $http) {
 
     $scope.start = function(element) {
         var httpRequest = $http({
-            method: 'POST',
+            method: 'GET',
             url: 'data/source.json'
         }).success(function(data, status) {
             data = angular.fromJson(data);
