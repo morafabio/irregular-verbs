@@ -50,11 +50,6 @@
     "participle":"bled"
   },
   {
-    "verb":"blend",
-    "past":"blended",
-    "participle":"blended"
-  },
-  {
     "verb":"blow",
     "past":"blew",
     "participle":"blown"
@@ -138,11 +133,6 @@
     "verb":"cut",
     "past":"cut",
     "participle":"cut"
-  },
-  {
-    "verb":"dare",
-    "past":"dared",
-    "participle":"dared"
   },
   {
     "verb":"deal",
@@ -478,11 +468,6 @@
     "verb":"shake",
     "past":"shook",
     "participle":"shaken"
-  },
-  {
-    "verb":"shave",
-    "past":"shaved",
-    "participle":"shaved"
   },
   {
     "verb":"shed",
